@@ -8,7 +8,7 @@ Natural-language queries are resolved through a ReAct loop — the LLM discovers
 
 ## Architecture
 
-<img src="architecture_light.png" width="300" height="200" alt="Logo">
+<img src="architecture_light.jpg" width="300" height="200" alt="Logo">
 
 ---
 

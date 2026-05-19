@@ -203,19 +203,6 @@ FLUSH PRIVILEGES;
 
 ---
 
-## Extending
-
-Adding a new tool takes three steps:
-
-1. Add a method to `DbService.java` that returns a JSON string.
-2. Add a `McpServerFeatures.SyncToolSpecification` in `McpServerConfig.java`.
-3. Register it with `server.addTool(yourNewTool())`.
-
-The LLM discovers and uses it automatically on the next client connection — no prompt changes required.
-
----
-
-
 ## License
 
 MIT

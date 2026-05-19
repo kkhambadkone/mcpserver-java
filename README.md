@@ -125,28 +125,6 @@ python3 client.py
 
 ## Example Session
 
-```
-✓ Connected to MCP server
-✓ Discovered 7 tools
-
-You: show me all customers
-  → list_tables → describe_table(customers) → list_rows(customers, id)
-Assistant: Found 10 customers: Alice Johnson, Bob Smith …
-
-You: find anyone in London
-  → search_column(customers, city, London)
-Assistant: 1 match — Frank Wilson, frank@example.com, London UK.
-
-You: change Jimmy Stewart's phone to 609-098-0220
-  → get_rows_where(customers, name, Jimmy Stewart)   ← confirms row exists
-  → update_row(customers, name, Jimmy Stewart, phone, 609-098-0220)
-  → get_rows_where(customers, name, Jimmy Stewart)   ← verifies change
-Assistant: Updated. Jimmy Stewart's phone is now 609-098-0220 (1 row affected).
-
-You: /tools    ← list all registered MCP tools
-You: exit
-```
-
 <img src="initialimage.png" width="900" height="900" alt="Logo">
 <img src="prompt.png" width="900" height="900" alt="Logo">
 ---

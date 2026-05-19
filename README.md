@@ -28,7 +28,7 @@ Natural-language queries are resolved through a ReAct loop — the LLM discovers
 
 ```
 .
-├── mcp-sqlserver-server/               # Java MCP server (Spring Boot)
+├── mcp-server/               # Java MCP server (Spring Boot)
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/com/mcpserverjava/
@@ -51,7 +51,7 @@ Natural-language queries are resolved through a ReAct loop — the LLM discovers
 ### 1 — Database setup
 
 ```bash
-mysql -u root -p < mcp-sqlserver-server/src/main/resources/schema-seed.sql
+mysql -u root -p < mcp-server/src/main/resources/schema-seed.sql
 ```
 
 Or manually create the table:
@@ -74,7 +74,7 @@ CREATE TABLE customers (
 
 ### 2 — Configure the server
 
-Edit `mcp-sqlserver-server/src/main/resources/application.yml`:
+Edit `mcp-server/src/main/resources/application.yml`:
 
 ```yaml
 spring:
@@ -87,7 +87,7 @@ spring:
 ### 3 — Build and run the server
 
 ```bash
-cd mcp-sqlserver-server
+cd mcp-server
 mvn clean package -q
 java -jar target/mcpserverjava-1.0.0.jar
 ```
@@ -147,6 +147,8 @@ You: /tools    ← list all registered MCP tools
 You: exit
 ```
 
+<img src="initialimage.png" width="900" height="900" alt="Logo">
+<img src="prompt.png" width="900" height="900" alt="Logo">
 ---
 
 ## Available MCP Tools
@@ -235,20 +237,6 @@ The LLM discovers and uses it automatically on the next client connection — no
 
 ---
 
-## Development
-
-```bash
-# Run tests
-mvn test
-
-# Build fat jar
-mvn clean package
-
-# Dev mode with hot reload
-mvn spring-boot:run
-```
-
----
 
 ## License
 

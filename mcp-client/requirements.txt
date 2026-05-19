@@ -1,0 +1,8 @@
+# MCP Python SDK (includes SSE transport)
+mcp>=1.3.0
+
+# Ollama Python client
+ollama>=0.3.0
+
+# Rich terminal output
+rich>=13.7.0

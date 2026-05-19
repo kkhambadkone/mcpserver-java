@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mcp-sqlserver-server
+
+  datasource:
+    # ── Update these three values for your environment ──────────────────────
+    url: jdbc:mysql://localhost:3306/<DBNAME>?allowPublicKeyRetrieval=true&useSSL=false
+    username: <USERNAME> 
+    password: <PASSWORD> 
+    # ────────────────────────────────────────────────────────────────────────
+    driver-class-name: com.mysql.cj.jdbc.Driver 
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.example.mcp: DEBUG
+    io.modelcontextprotocol: INFO

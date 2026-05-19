@@ -9,25 +9,7 @@ Natural-language queries are resolved through a ReAct loop — the LLM discovers
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  CLIENT                                                  │
-│                                                         │
-│  Python REPL  ──── Ollama / Qwen2.5 ──── SSE Transport │
-└───────────────────────────────┬─────────────────────────┘
-                                │ HTTP/SSE  (JSON-RPC)
-┌───────────────────────────────▼─────────────────────────┐
-│  JAVA MCP SERVER  (Spring Boot · MCP SDK 0.9.0)         │
-│                                                         │
-│  list_tables  ·  describe_table  ·  execute_sql         │
-│  list_rows  ·  get_rows_where  ·  search_column         │
-│  update_row                                             │
-│                                                         │
-│  DbService  ──── Spring JdbcTemplate ──── HikariCP     │
-└───────────────────────────────┬─────────────────────────┘
-                                │ JDBC  (port 3306)
-┌───────────────────────────────▼─────────────────────────┐
-│  MySQL  ·  customerdb                                   │
-└─────────────────────────────────────────────────────────┘
+<img src="architecture_light.png" width="300" height="200" alt="Logo">
 ```
 
 ---
